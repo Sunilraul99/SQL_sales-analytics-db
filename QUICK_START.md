@@ -12,26 +12,8 @@ A complete Git repository with a MySQL sales database including:
 ```
 sales-db-project/
 ├── README.md          # Comprehensive documentation
-├── setup.sql          # Database schema + sample data + queries
-├── .gitignore         # Git configuration for excluding files
-└── .git/              # Git version control history
+├── sales_db.sql          # Database schema + sample data + queries
 ```
-
-## 30-Second Setup
-
-```bash
-# Navigate to the folder
-cd sales-db-project
-
-# Run the database setup
-mysql -u root -p < setup.sql
-
-# Login and check
-mysql -u root -p
-USE sales_db;
-SELECT * FROM customers LIMIT 5;
-```
-
 ## What Each Table Does
 
 | Table | Purpose | Records |
@@ -46,7 +28,7 @@ SELECT * FROM customers LIMIT 5;
 
 ## 8 Ready-to-Use Queries
 
-All included in `setup.sql` - run them directly:
+All included in `sales_db.sql` - run them directly:
 
 1. **Revenue by Type & Region** - Sales breakdown
 2. **Product Performance** - Top products with margins
@@ -75,58 +57,3 @@ VALUES ('Your Name', 'email@example.com', 'USA', 'NY', CURDATE(), 'Individual', 
 SELECT * FROM sales_orders ORDER BY net_amount DESC LIMIT 5;
 ```
 
-**Check Git history:**
-```bash
-git log --oneline
-git show HEAD
-```
-
-## Key Features
-
-✅ **Production-Ready** - Proper foreign keys and indexes  
-✅ **Sample Data** - 10 months of realistic transactions  
-✅ **Advanced Queries** - Window functions, CTEs, aggregations  
-✅ **Well Documented** - Comments explaining each section  
-✅ **Customizable** - Easy to modify for your needs  
-✅ **Version Controlled** - Full Git history included  
-
-## Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| MySQL not running | `mysql.server start` (Mac/Linux) or start MySQL service (Windows) |
-| Access denied | Use correct username and password |
-| Database already exists | Drop it first: `DROP DATABASE sales_db;` |
-| Syntax errors | Make sure you're using MySQL 5.7+ |
-
-## Next Steps
-
-1. **Explore the data** - Run the business intelligence queries
-2. **Understand the relationships** - Check foreign key constraints
-3. **Practice SQL** - Write your own queries against the data
-4. **Customize** - Add your own products, customers, or orders
-5. **Version control** - Make changes and commit to git
-
-## Git Commands to Know
-
-```bash
-# See what changed
-git status
-git log
-
-# Make a change and save it
-git add .
-git commit -m "Your message here"
-
-# See who changed what
-git diff HEAD~1
-
-# Reset to original
-git checkout .
-```
-
----
-
-**Everything is documented in the README.md file inside the repository.** 
-
-Enjoy! 🚀
